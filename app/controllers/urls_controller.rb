@@ -51,16 +51,7 @@ class UrlsController < ApplicationController
       rescue ActiveRecord::RecordNotFound => e
         render json: { error: e }, status: :not_found
     end  
-
-    # def check_url_presence
-    #   url = url_params[:url]
-    #   if Url.find_by(url: url)
-    #     render status: :unprocessable_entity,
-    #            json: { error: "URL already present"}
-    #   end
-    # end
-
-    # Only allow a list of trusted parameters through.
+  
     def url_params
       params.require(:url).permit(:original_url, :status, :click_count)
     end
