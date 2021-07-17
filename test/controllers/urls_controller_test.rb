@@ -13,16 +13,10 @@ class UrlsControllerTest < ActionDispatch::IntegrationTest
   test "should create url" do
     assert_difference('Url.count') do
       post urls_url, params: {url: {:original_url => "http://www.google.com2"}}
-      #, :short_url => "http://localhost/hdcghw", :slug => "hdcghw" } }
     end
 
-    #assert_redirected_to urls_url
     assert_response :success
   end
 
-  # test "should update url" do
-  #   patch url_url(@url), params: { url: { :original_url => "http://www.google.com1", :short_url => "http://localhost/hdcghw", :slug => "hdcghw" } }
-  #   assert_response :success
-  # end
 
 end
