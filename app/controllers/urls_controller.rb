@@ -1,12 +1,10 @@
 class UrlsController < ApplicationController
   require 'securerandom'
 
-  before_action :load_url, only: [:show, :update]
-  #before_action :generate_slug, :short_url, only: :create
-
+  before_action :load_url, only: [:show, :update]\
+    
   def index
     urls = Url.all
-    #.order('updated_at DESC', 'created_at DESC')
     render status: :ok, json: {
       urls: urls.organize()
     }
@@ -22,7 +20,6 @@ class UrlsController < ApplicationController
   def create
     slug = generate_slug
     @url = Url.new(original_url: url_params[:original_url], slug: slug, short_url: short_url(slug))
-   # @url = Url.new(url_params.merge(slug: @slug, short_url: @short_url))
     if @url.save
       render status: :ok, json: { notice: t('successfully_created') }
     else
