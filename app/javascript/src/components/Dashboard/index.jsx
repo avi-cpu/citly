@@ -8,7 +8,6 @@ import urlsApi from "apis/urls";
 
 const Dashboard = () => {
   const [urls, setUrls] = useState([]);
-  // for creating short url links
   const [url, setUrl] = useState("");
   const [loading, setLoading] = useState(true);
 
