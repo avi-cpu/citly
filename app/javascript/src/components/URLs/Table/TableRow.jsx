@@ -3,7 +3,6 @@ import classnames from "classnames";
 import PropTypes from "prop-types";
 
 const TableRow = ({ data, visitHandler, pinUrl }) => {
-  //console.log(data);
   return (
     <tbody className="bg-white divide-y divide-gray-200">
       {data.map(rowData => (
@@ -21,12 +20,6 @@ const TableRow = ({ data, visitHandler, pinUrl }) => {
                     rowData.status === "pinned",
                 }
               )}
-              // className={`transition duration-300 ease-in-out hover:text-purple-500
-              //   text-bb-border text-2xl ${
-              //   rowData.status === "pinned"?
-              //   "ri-pushpin-2-fill text-purple-500"
-              //   :"ri-pushpin-2-line"
-              // }`}
               onClick={() => pinUrl(rowData.slug, rowData.status)}
             ></i>
           </td>
