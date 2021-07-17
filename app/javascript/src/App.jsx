@@ -5,7 +5,6 @@ import { initializeLogger } from "./common/logger";
 
 import Dashboard from "components/Dashboard";
 import PageLoader from "components/PageLoader";
-// import NavBar from "components/NavBar";
 import { registerIntercepts, setAuthHeaders } from "apis/axios";
 
 const App = () => {
@@ -28,7 +27,6 @@ const App = () => {
   return (
     <Router>
       <ToastContainer />
-      {/* <NavBar /> */}
       <Switch>
         <Route exact path="/" component={Dashboard} />
       </Switch>
