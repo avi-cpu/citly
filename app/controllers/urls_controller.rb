@@ -4,7 +4,6 @@ class UrlsController < ApplicationController
   before_action :load_url, only: [:show, :update]
   #before_action :generate_slug, :short_url, only: :create
 
-  # GET /urls or /urls.json
   def index
     urls = Url.all
     #.order('updated_at DESC', 'created_at DESC')
